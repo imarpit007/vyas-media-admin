@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy, Renderer2 } from '@angular/core';
-import { ApiService } from '../utils/services/api.service';
-import { AppService } from '../utils/services/app.service';
+import { ApiService } from '../../utils/services/api.service';
+import { AppService } from '../../utils/services/app.service';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
