@@ -2,6 +2,7 @@ import { Component, OnInit, OnDestroy, Renderer2 } from '@angular/core';
 import { ApiService } from '../../utils/services/api.service';
 import { AppService } from '../../utils/services/app.service';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-login',
@@ -30,15 +31,15 @@ export class LoginComponent implements OnInit {
       const testBy = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
       let isValid = testBy.test(this.loginForm.get("email").value.toLowerCase());
       if(!isValid) {
+        Swal.fire({
+          text: 'Incorrect email',
+          icon: 'error',
+        });
         return false;
       }
       this.isAuthLoading = true;
-      // let loginData = {
-        //   email: "a@gmail.com",
-        //   password: "123456"
-        // }
       let loginData = {
-        email: this.loginForm.get("email").value,
+        email: this.loginForm.get("email").value.toLowerCase(),
         password: this.loginForm.get("password").value
       };
 
@@ -46,15 +47,25 @@ export class LoginComponent implements OnInit {
         console.log(result);
           if (result.success) {
             this.isAuthLoading = false;
+            Swal.fire({
+              text: result.message,
+              icon: 'success',
+            });
             this.appService.login(result);
           } else {
             this.isAuthLoading = false;
+            Swal.fire({
+              text: result.message,
+              icon: 'error',
+            });
           }
       })
-    } 
-    // else {
-    //   return false
-    // }
+    } else {
+      Swal.fire({
+        text: 'Please enter email/password',
+        icon: 'error',
+      });
+    }
     
   }
 
