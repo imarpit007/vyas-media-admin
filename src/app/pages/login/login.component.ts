@@ -32,7 +32,7 @@ export class LoginComponent implements OnInit {
       let isValid = testBy.test(this.loginForm.get("email").value.toLowerCase());
       if(!isValid) {
         Swal.fire({
-          text: 'Incorrect email',
+          text: 'Invalid Email Address',
           icon: 'error',
         });
         return false;
@@ -51,7 +51,9 @@ export class LoginComponent implements OnInit {
               text: result.message,
               icon: 'success',
             });
-            this.appService.login(result);
+            setTimeout(() => {
+              this.appService.login(result);
+            }, 1000);
           } else {
             this.isAuthLoading = false;
             Swal.fire({
