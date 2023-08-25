@@ -2,6 +2,7 @@ import { Component, OnInit, OnDestroy, Renderer2 } from '@angular/core';
 import { ApiService } from '../../utils/services/api.service';
 import { AppService } from '../../utils/services/app.service';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -16,6 +17,7 @@ export class LoginComponent implements OnInit {
     private renderer: Renderer2,
     private appService: AppService,
     private apiService: ApiService,
+    private router: Router
   ){}
 
   ngOnInit() {
@@ -51,9 +53,8 @@ export class LoginComponent implements OnInit {
               text: result.message,
               icon: 'success',
             });
-            setTimeout(() => {
-              this.appService.login(result);
-            }, 1000);
+            this.appService.login(result);
+            this.router.navigate(['/admin/dashboard']);
           } else {
             this.isAuthLoading = false;
             Swal.fire({
