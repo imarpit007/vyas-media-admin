@@ -39,7 +39,12 @@
           </div>
           <div class="row">
             <div class="col-12">
-              <button (click)="login()">Submit</button>
+              <app-button
+              [type]="'submit'"
+              [block]="true"
+              [text]="'Sign In'"
+              [color]="'info'"
+            ></app-button>
             </div>
           </div>
         </form>
