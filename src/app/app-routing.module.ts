@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ForgetPasswordComponent } from './pages/forget-password/forget-password.component';
 import { LoginComponent } from './pages/login/login.component';
-import { HomeComponent } from './components/home/home.component';
+import { HomeComponent } from './views/home/home.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
