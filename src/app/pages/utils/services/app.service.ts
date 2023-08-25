@@ -11,10 +11,10 @@ export class AppService {
 
   login(getLoginDetail : any) {
     localStorage.setItem('userInfo', JSON.stringify(getLoginDetail['userInfo']));
-    localStorage.setItem('id', getLoginDetail.id);
-    localStorage.setItem('email', getLoginDetail.email);
-    localStorage.setItem('role', getLoginDetail.role);
-    window.location.href = "/";
+    localStorage.setItem('id', getLoginDetail.userInfo.id);
+    localStorage.setItem('email', getLoginDetail.userInfo.email);
+    localStorage.setItem('role', getLoginDetail.userInfo.role);
+    // window.location.href = "/admin/dashboard";
   }
 
   logout() {
@@ -22,6 +22,6 @@ export class AppService {
     localStorage.removeItem('id');
     localStorage.removeItem('email');
     localStorage.removeItem('role');
-    this.router.navigate(['/admin/login']);
+    // this.router.navigate(['/admin/login']);
   }
 }
