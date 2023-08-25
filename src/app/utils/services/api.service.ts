@@ -9,13 +9,26 @@ import { map } from 'rxjs/operators';
 export class ApiService {
   apiHost: string;
   login: string;
+  checkEmail: string;
+  checkOTP: string;
 
   constructor(private http: HttpClient) {
     this.apiHost = environment.API_HOST;
     this.login = this.apiHost + `auth/login`;
+    this.checkEmail = this.apiHost + `auth/forgetUserPassword`;
+    this.checkOTP = this.apiHost + `auth/verifyOTPForgetUserPassword`;
   }
 
   onLogin(requestParameters : any) {
     return this.http.post(`${this.login}`, JSON.parse(requestParameters), {});
   }
+
+  checkEmailForgotPsw(requestParameters : any) {
+    return this.http.post(`${this.checkEmail}`, JSON.parse(requestParameters), {});
+  }
+
+  checkOTPForgotPsw(requestParameters : any) {
+    return this.http.post(`${this.checkOTP}`, JSON.parse(requestParameters), {});
+  }
+
 }
