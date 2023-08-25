@@ -1,6 +1,6 @@
 export const environment = {
     production: false,
-    API_HOST: 'http://localhost:3000/',
+    API_HOST: 'http://localhost:9292/api/v1/',
 };
 
 // This file can be replaced during build by using the `fileReplacements` array.

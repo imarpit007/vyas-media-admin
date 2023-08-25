@@ -12,7 +12,7 @@ export class ApiService {
 
   constructor(private http: HttpClient) {
     this.apiHost = environment.API_HOST;
-    this.login = this.apiHost + `login`;
+    this.login = this.apiHost + `auth/login`;
   }
 
   onLogin(requestParameters : any) {
