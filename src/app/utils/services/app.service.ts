@@ -14,7 +14,7 @@ export class AppService {
     localStorage.setItem('id', getLoginDetail.userInfo.id);
     localStorage.setItem('email', getLoginDetail.userInfo.email);
     localStorage.setItem('role', getLoginDetail.userInfo.role);
-    // window.location.href = "/admin/dashboard";
+    window.location.href = "/admin/dashboard";
   }
 
   logout() {
