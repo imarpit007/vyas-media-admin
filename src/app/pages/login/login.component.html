@@ -1,4 +1,4 @@
-<div class="hold-transition sidebar-mini sidebar-open login-page">
+<!-- <div class="hold-transition sidebar-mini sidebar-open login-page"> -->
   <div class="login-box">
     <div class="login-logo">
       <a [routerLink]="['/']">
@@ -10,7 +10,7 @@
       <div class="card-body login-card-body">
         <p class="login-box-msg">Sign in to continue</p>
   
-        <form>
+        <form [formGroup]="loginForm" (ngSubmit)="login()">
           <div class="input-group mb-3">
             <input
               formControlName="email"
@@ -43,6 +43,7 @@
               [type]="'submit'"
               [block]="true"
               [text]="'Sign In'"
+              [loading]="isAuthLoading"
               [color]="'info'"
             ></app-button>
             </div>
@@ -51,4 +52,4 @@
       </div>
     </div>
   </div>
-</div>
+<!-- </div> -->
