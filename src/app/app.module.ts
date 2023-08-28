@@ -10,6 +10,7 @@ import { FooterComponent } from './views/admin/footer/footer.component';
 import { HeaderComponent } from './views/admin/header/header.component';
 import { MenuSidebarComponent } from './views/admin/menu-sidebar/menu-sidebar.component';
 import { PageHeaderComponent } from './views/admin/page-header/page-header.component';
+import { UserDropdownMenuComponent } from './views/admin/header/user-dropdown-menu/user-dropdown-menu.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { PageHeaderComponent } from './views/admin/page-header/page-header.compo
     HeaderComponent,
     MenuSidebarComponent,
     PageHeaderComponent,
+    UserDropdownMenuComponent,
   ],
   imports: [
     BrowserModule,
