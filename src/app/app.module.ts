@@ -6,12 +6,20 @@ import { AppComponent } from './app.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppButtonComponent } from './components/app-button/app-button.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FooterComponent } from './views/admin/footer/footer.component';
+import { HeaderComponent } from './views/admin/header/header.component';
+import { MenuSidebarComponent } from './views/admin/menu-sidebar/menu-sidebar.component';
+import { PageHeaderComponent } from './views/admin/page-header/page-header.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     routingComponents,
     AppButtonComponent,
+    FooterComponent,
+    HeaderComponent,
+    MenuSidebarComponent,
+    PageHeaderComponent,
   ],
   imports: [
     BrowserModule,
