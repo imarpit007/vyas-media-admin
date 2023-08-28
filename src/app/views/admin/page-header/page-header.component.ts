@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./page-header.component.scss']
 })
 export class PageHeaderComponent {
+  pageTitle: string = 'Dashboard';
 
 }

@@ -28,6 +28,6 @@ export class AppService {
     localStorage.removeItem('id');
     localStorage.removeItem('email');
     localStorage.removeItem('role');
-    // this.router.navigate(['/admin/login']);
+    this.router.navigate(['/admin/login']);
   }
 }

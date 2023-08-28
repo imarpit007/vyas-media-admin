@@ -1,0 +1,17 @@
+.main-sidebar {
+    height: 100vh;
+    overflow: hidden;
+}
+
+.nav-sidebar .menu-is-opening>.nav-link i.right,
+.nav-sidebar .menu-open>.nav-link i.right {
+    transform: rotate(90deg);
+}
+
+.submenu {
+    padding-left: 2rem;
+}
+
+.subsubmenu {
+    padding-left: 3rem;
+}

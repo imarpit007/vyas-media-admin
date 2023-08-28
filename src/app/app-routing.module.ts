@@ -6,6 +6,8 @@ import { LoginComponent } from './pages/login/login.component';
 import { HomeComponent } from './views/home/home.component';
 import { AdminComponent } from './views/admin/admin.component';
 import { ResetPasswordComponent } from './pages/reset-password/reset-password.component';
+import { DashboardComponent } from './views/dashboard/dashboard.component';
+import { EmployeeListComponent } from './views/employee-list/employee-list.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -13,7 +15,42 @@ const routes: Routes = [
   { path: 'admin/forget-password', component: ForgetPasswordComponent },
   // { path: 'admin/reset-password/:emailAdd', component: ResetPasswordComponent },
   { path: 'admin/reset-password', component: ResetPasswordComponent },
-  { path: 'admin/admin-panel', component: AdminComponent },
+  {
+    path: 'admin/admin-panel',
+    component: AdminComponent,
+    children: [
+      {
+        path: '',
+        component: DashboardComponent,
+        data: {
+          title: 'Dashboard',
+          breadcrumb: [
+            {
+              title: 'Dashboard',
+              url: '/',
+            },
+          ],
+        },
+      },
+      {
+        path: 'employee-list',
+        component: EmployeeListComponent,
+        data: {
+          title: 'Employee List',
+          breadcrumb: [
+            {
+              title: 'Dashboard',
+              url: '/',
+            },
+            {
+              title: 'Employee List',
+              url: '/employee-list',
+            },
+          ],
+        },
+      }
+    ]
+  },
   { path: '**', redirectTo: '',},
 ];
 
@@ -22,4 +59,12 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
-export const routingComponents = [HomeComponent, LoginComponent, ForgetPasswordComponent, ResetPasswordComponent, AdminComponent,]
+export const routingComponents = [
+  HomeComponent,
+  LoginComponent,
+  ForgetPasswordComponent,
+  ResetPasswordComponent,
+  AdminComponent,
+  DashboardComponent,
+  EmployeeListComponent,
+]
