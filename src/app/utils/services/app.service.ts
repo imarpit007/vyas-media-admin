@@ -6,6 +6,12 @@ import { Observable, Subject } from 'rxjs';
   providedIn: 'root'
 })
 export class AppService {
+  public user = {
+    firstName: 'Alexander',
+    lastName: 'Pierce',
+    image: '../../../assets/images/pfp-admin.png',
+    // image: 'assets/img/user2-160x160.jpg',
+  };
 
   constructor(private router: Router) { }
 
