@@ -54,7 +54,7 @@ export class LoginComponent implements OnInit {
               icon: 'success',
             });
             this.appService.login(result);
-            this.router.navigate(['/admin/dashboard']);
+            this.router.navigate(['/admin/admin-panel']);
           } else {
             this.isAuthLoading = false;
             Swal.fire({
