@@ -8,6 +8,7 @@ import { AdminComponent } from './views/admin/admin.component';
 import { ResetPasswordComponent } from './pages/reset-password/reset-password.component';
 import { DashboardComponent } from './views/dashboard/dashboard.component';
 import { EmployeeListComponent } from './views/employee-list/employee-list.component';
+import { AddEmployeeComponent } from './views/add-employee/add-employee.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -48,6 +49,27 @@ const routes: Routes = [
             },
           ],
         },
+      },
+      {
+        path: 'add-employee',
+        component: AddEmployeeComponent,
+        data: {
+          title: 'Add Employee',
+          breadcrumb: [
+            {
+              title: 'Dashboard',
+              url: 'admin/admin-panel',
+            },
+            {
+              title: 'Employee List',
+              url: '/employee-list',
+            },
+            {
+              title: 'Add Employee',
+              url: '/add-employee',
+            },
+          ],
+        },
       }
     ]
   },
@@ -67,4 +89,5 @@ export const routingComponents = [
   AdminComponent,
   DashboardComponent,
   EmployeeListComponent,
+  AddEmployeeComponent,
 ]
