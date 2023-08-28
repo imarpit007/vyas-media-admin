@@ -6,14 +6,14 @@
                 <h1>{{pageTitle}}</h1>
             </div>
             <div class="col-sm-6">
-                <ol class="breadcrumb float-sm-right">
-                    <li class="breadcrumb-item">
-                        <span>
-                            <a [routerLink]="">Breadcrum Title</a>
-                        </span>
-                        <!-- <span>
-                            Page Title
-                        </span> -->
+                <ol class="breadcrumb float-sm-right" *ngIf="breadcrumbs">
+                    <li *ngFor="let breadcrumb of breadcrumbs" class="breadcrumb-item {{ (breadcrumb.title === pageTitle) ? 'active' : '' }}">
+                      <span *ngIf="breadcrumb.title !== pageTitle">
+                        <a [routerLink]="[breadcrumb.url]">{{ breadcrumb.title }}</a>
+                      </span>
+                      <span *ngIf="breadcrumb.title === pageTitle">
+                        {{ breadcrumb.title }}
+                      </span>
                     </li>
                 </ol>
             </div>

@@ -27,7 +27,7 @@ const routes: Routes = [
           breadcrumb: [
             {
               title: 'Dashboard',
-              url: '/',
+              url: 'admin/admin-panel',
             },
           ],
         },
@@ -40,7 +40,7 @@ const routes: Routes = [
           breadcrumb: [
             {
               title: 'Dashboard',
-              url: '/',
+              url: 'admin/admin-panel',
             },
             {
               title: 'Employee List',
