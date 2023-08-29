@@ -1,27 +1,94 @@
-# VyasAdmin
+# nodejs-basic-template 
+# MongoDb database
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.5.
+# Start project with command 'npm init'.
+# run command 'npm start' to see the code working.
 
-## Development server
+# https://expressjs.com/en/starter/generator.html
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Express application generator
+Use the application generator tool, express-generator, to quickly create an application skeleton.
 
-## Code scaffolding
+You can run the application generator with the npx command (available in Node.js 8.2.0).
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+$ npx express-generator
+For earlier Node versions, install the application generator as a global npm package and then launch it:
 
-## Build
+$ npm install -g express-generator
+$ express
+Display the command options with the -h option:
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+$ express -h
 
-## Running unit tests
+  Usage: express [options] [dir]
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+  Options:
 
-## Running end-to-end tests
+    -h, --help          output usage information
+        --version       output the version number
+    -e, --ejs           add ejs engine support
+        --hbs           add handlebars engine support
+        --pug           add pug engine support
+    -H, --hogan         add hogan.js engine support
+        --no-view       generate without view engine
+    -v, --view <engine> add view <engine> support (ejs|hbs|hjs|jade|pug|twig|vash) (defaults to jade)
+    -c, --css <engine>  add stylesheet <engine> support (less|stylus|compass|sass) (defaults to plain css)
+        --git           add .gitignore
+    -f, --force         force on non-empty directory
+For example, the following creates an Express app named myapp. The app will be created in a folder named myapp in the current working directory and the view engine will be set to Pug:
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+$ express --view=pug myapp
 
-## Further help
+   create : myapp
+   create : myapp/package.json
+   create : myapp/app.js
+   create : myapp/public
+   create : myapp/public/javascripts
+   create : myapp/public/images
+   create : myapp/routes
+   create : myapp/routes/index.js
+   create : myapp/routes/users.js
+   create : myapp/public/stylesheets
+   create : myapp/public/stylesheets/style.css
+   create : myapp/views
+   create : myapp/views/index.pug
+   create : myapp/views/layout.pug
+   create : myapp/views/error.pug
+   create : myapp/bin
+   create : myapp/bin/www
+Then install dependencies:
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+$ cd myapp
+$ npm install
+On MacOS or Linux, run the app with this command:
+
+$ DEBUG=myapp:* npm start
+On Windows Command Prompt, use this command:
+
+> set DEBUG=myapp:* & npm start
+On Windows PowerShell, use this command:
+
+PS> $env:DEBUG='myapp:*'; npm start
+Then load http://localhost:3000/ in your browser to access the app.
+
+The generated app has the following directory structure:
+
+.
+├── app.js
+├── bin
+│   └── www
+├── package.json
+├── public
+│   ├── images
+│   ├── javascripts
+│   └── stylesheets
+│       └── style.css
+├── routes
+│   ├── index.js
+│   └── users.js
+└── views
+    ├── error.pug
+    ├── index.pug
+    └── layout.pug
+
+7 directories, 9 files
