@@ -1,5 +1,5 @@
 # nodejs-basic-template 
-# MongoDb database
+<!-- # MongoDb database -->
 
 # Start project with command 'npm init'.
 # run command 'npm start' to see the code working.
@@ -69,7 +69,7 @@ On Windows Command Prompt, use this command:
 On Windows PowerShell, use this command:
 
 PS> $env:DEBUG='myapp:*'; npm start
-Then load http://localhost:3000/ in your browser to access the app.
+Then load http://localhost:9292/ in your browser to access the app.
 
 The generated app has the following directory structure:
 
