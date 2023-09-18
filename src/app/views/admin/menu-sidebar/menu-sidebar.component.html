@@ -2,7 +2,7 @@
 	<!-- Brand Logo -->
 	<a [routerLink]="['/admin/admin-panel']" class="brand-link navbar-info">
 		<img src="../../../assets/images/logo-1.png" alt="AdminLTE Logo"
-			class="brand-image img-circle elevation-3" style="opacity: 0.8" />
+			class="brand-image img-circle elevation-3 logo-position" />
 		<span class="brand-text font-weight-bolder">&nbsp;Vyas Media Admin</span>
 	</a>
 	<!-- Sidebar -->
@@ -35,7 +35,7 @@
 						<p>Employee<i class="fas fa-angle-right right"></i></p>
 					</a>
 
-					<ul class="nav nav-treeview">
+					<!-- <ul class="nav nav-treeview">
 						<li class="nav-item">
 							<a [routerLink]="['/admin/admin-panel/employee-list']" class="nav-link">
 								<p class="submenu">Add Employee</p>
@@ -46,18 +46,18 @@
 								<p class="submenu">Employee List</p>
 							</a>
 						</li>
-					</ul>
+					</ul> -->
 				</li>
 
 				<li *ngIf='+userInfo.role === 0 || +userInfo.role === 1' class="nav-item has-treeview">
-					<a href="#" class="nav-link">
+					<a [routerLink]="['/admin/admin-panel/employee-list']" class="nav-link">
 
 						<i class="nav-icon fas fa-clipboard-list"></i>
 
 						<p>Blog<i class="fas fa-angle-right right"></i></p>
 					</a>
 
-					<ul class="nav nav-treeview">
+					<!-- <ul class="nav nav-treeview">
 						<li class="nav-item">
 							<a [routerLink]="['/blog']" class="nav-link">
 								<p class="submenu">Add</p>
@@ -68,7 +68,7 @@
 								<p class="submenu">Blog List</p>
 							</a>
 						</li>
-					</ul>
+					</ul> -->
 				</li>
 
 			</ul>
