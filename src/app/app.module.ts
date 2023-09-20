@@ -7,6 +7,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppButtonComponent } from './components/app-button/app-button.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DataTablesModule } from 'angular-datatables';
+import { CKEditorModule } from 'ng2-ckeditor';
 
 import { FooterComponent } from './views/admin/footer/footer.component';
 import { HeaderComponent } from './views/admin/header/header.component';
@@ -33,6 +34,7 @@ import { UserDropdownMenuComponent } from './views/admin/header/user-dropdown-me
     ReactiveFormsModule,
     BrowserAnimationsModule,
     DataTablesModule,
+    CKEditorModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,1 +1,105 @@
-<p>add-blog works!</p>
+<div class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card card-primary">
+                    <!-- form start -->
+                    <!-- <form [formGroup]="addBlogForm" (ngSubmit)="addBlogs()"> -->
+
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="title">Title<span class="required"></span></label>
+                                    <input type="text" class="form-control" placeholder="Enter Title" />
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="class_name">Heading <span class="required"></span></label>
+                                    <select class="form-control">
+                                        <option value="" selected>Select Heading
+                                        </option>
+                                        <option>Option</option>
+                                    </select>
+
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="class_name">Sub Heading <span class="required"></span></label>
+                                    <select class="form-control">
+                                        <option value="" selected>Select Heading
+                                        </option>
+                                        <option>Option</option>
+                                    </select>
+
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label>Start Date <span class="required"></span></label>
+                                    <input type="date" id="start_date1"
+                                        class="form-control">
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label>Image<span class="required"></span></label>
+                                    <div class="input-group">
+                                        <div class="custom-file">
+                                            <input type="file" accept="image/*" class="custom-file-input"
+                                                aria-describedby="imageFile" name="blog_image" />
+                                            <label class="custom-file-label" #importImg for="blog_image">
+                                                <span>Upload Image</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="class_name">Content<span class="required"></span></label>
+                                    <ckeditor [config]="config_ck">
+
+                                    </ckeditor>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row"></div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="custom-control custom-checkbox">
+                                    <input class="form-check-input" type="checkbox" id="status" />
+                                    <label for="status" class="form-check-label">Active</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.card-body -->
+                    <div class="card-footer text-right">
+                        <!-- <button type="submit" class="btn btn-info mr-2">Submit</button> -->
+                        <button type="submit" class="btn btn-info">Submit</button>
+
+                        <button type="button" class="btn btn-secondary ml-2"
+                            [routerLink]="['/admin/admin-panel/blog-list']">Cancel</button>
+                    </div>
+                    <!-- </form> -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- <app-ck-editor></app-ck-editor> -->
