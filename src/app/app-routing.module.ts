@@ -9,6 +9,8 @@ import { ResetPasswordComponent } from './pages/reset-password/reset-password.co
 import { DashboardComponent } from './views/dashboard/dashboard.component';
 import { EmployeeListComponent } from './views/employee-list/employee-list.component';
 import { AddEmployeeComponent } from './views/add-employee/add-employee.component';
+import { BlogListComponent } from './views/blog-list/blog-list.component';
+
 import { AuthGuard } from './utils/guards/auth.guard';
 import { NonAuthGuard } from './utils/guards/non-auth.guard';
 
@@ -86,7 +88,24 @@ const routes: Routes = [
             },
           ],
         },
-      }
+      },
+      {
+        path: 'blog-list',
+        component: BlogListComponent,
+        data: {
+          title: 'Blogs',
+          breadcrumb: [
+            {
+              title: 'Dashboard',
+              url: 'admin/admin-panel',
+            },
+            {
+              title: 'Blogs',
+              url: '/blog-list',
+            },
+          ],
+        },
+      },
     ]
   },
   { path: '**', redirectTo: '',},
@@ -106,4 +125,5 @@ export const routingComponents = [
   DashboardComponent,
   EmployeeListComponent,
   AddEmployeeComponent,
+  BlogListComponent,
 ]
