@@ -30,4 +30,8 @@ export class AppService {
     localStorage.removeItem('role');
     this.router.navigate(['/admin/login']);
   }
+
+  loggedIn() {
+    return (!!localStorage.getItem("id") && !!localStorage.getItem("email") && !!localStorage.getItem("role"));
+  }
 }
