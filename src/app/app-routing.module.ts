@@ -13,6 +13,7 @@ import { BlogListComponent } from './views/blog-list/blog-list.component';
 
 import { AuthGuard } from './utils/guards/auth.guard';
 import { NonAuthGuard } from './utils/guards/non-auth.guard';
+import { AddBlogComponent } from './views/add-blog/add-blog.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -106,6 +107,27 @@ const routes: Routes = [
           ],
         },
       },
+      {
+        path: 'add-blog',
+        component: AddBlogComponent,
+        data: {
+          title: 'Add Blog',
+          breadcrumb: [
+            {
+              title: 'Dashboard',
+              url: 'admin/admin-panel',
+            },
+            {
+              title: 'Blogs',
+              url: '/blog-list',
+            },
+            {
+              title: 'Add Blog',
+              url: '/add-blog',
+            },
+          ],
+        },
+      },
     ]
   },
   { path: '**', redirectTo: '',},
@@ -126,4 +148,5 @@ export const routingComponents = [
   EmployeeListComponent,
   AddEmployeeComponent,
   BlogListComponent,
+  AddBlogComponent,
 ]
