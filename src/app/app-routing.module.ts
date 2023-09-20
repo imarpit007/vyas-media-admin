@@ -9,6 +9,7 @@ import { ResetPasswordComponent } from './pages/reset-password/reset-password.co
 import { DashboardComponent } from './views/dashboard/dashboard.component';
 import { EmployeeListComponent } from './views/employee-list/employee-list.component';
 import { AddEmployeeComponent } from './views/add-employee/add-employee.component';
+import { AuthGuard } from './utils/guards/auth.guard';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -19,6 +20,7 @@ const routes: Routes = [
   {
     path: 'admin/admin-panel',
     component: AdminComponent,
+    canActivate: [AuthGuard],
     children: [
       {
         path: '',
