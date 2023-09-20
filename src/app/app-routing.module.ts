@@ -10,13 +10,26 @@ import { DashboardComponent } from './views/dashboard/dashboard.component';
 import { EmployeeListComponent } from './views/employee-list/employee-list.component';
 import { AddEmployeeComponent } from './views/add-employee/add-employee.component';
 import { AuthGuard } from './utils/guards/auth.guard';
+import { NonAuthGuard } from './utils/guards/non-auth.guard';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'admin/login', component: LoginComponent },
-  { path: 'admin/forget-password', component: ForgetPasswordComponent },
+  { 
+    path: 'admin/login',
+    component: LoginComponent,
+    // canActivate: [NonAuthGuard]
+  },
+  {
+    path: 'admin/forget-password',
+    component: ForgetPasswordComponent,
+    // canActivate: [NonAuthGuard]
+  },
   // { path: 'admin/reset-password/:emailAdd', component: ResetPasswordComponent },
-  { path: 'admin/reset-password', component: ResetPasswordComponent },
+  {
+    path: 'admin/reset-password',
+    component: ResetPasswordComponent,
+    // canActivate: [NonAuthGuard]
+  },
   {
     path: 'admin/admin-panel',
     component: AdminComponent,
