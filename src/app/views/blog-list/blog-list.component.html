@@ -1,1 +1,50 @@
-<p>blog-list works!</p>
+<section class="content">
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+                    <a [routerLink]="['/admin/admin-panel/add-blog']" class="btn btn-info float-right mb-3">Add Blog</a>
+                    <table datatable [dtOptions]="dtOptions" class="row-border hover">
+                        <thead>
+                            <tr>
+                                <th>S. No.</th>
+                                <th>Heading</th>
+                                <th>Date</th>
+                                <th>Category</th>
+                                <th>Sub Category</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1.</td>
+                                <td>पुरानी संसद में पीएम मोदी ने पूर्व प्रधानमंत्रियों के योगदान को किया याद</td>
+                                <td>September 18, 2023</td>
+                                <td>India</td>
+                                <td>Politics</td>
+                                <td>Active</td>
+
+                                <td>
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-info"
+                                            ><i
+                                                class="fas fa-pen"></i></button>
+                                        <button type="button" class="btn btn-success"
+                                            ><i
+                                                class="far fa-check-circle"></i></button>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                        <tbody *ngIf="allData?.length == 0">
+                            <tr>
+                                <td colspan="3" class="no-data-available">No data!</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
